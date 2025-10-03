@@ -2,6 +2,10 @@
 FROM gradle:8.8-jdk21 AS build
 WORKDIR /app
 COPY . .
+
+# give permission to gradlew
+RUN chmod +x ./gradlew
+
 RUN ./gradlew clean build -x test
 
 # Step 2: Runtime stage
