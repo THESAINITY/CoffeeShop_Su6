@@ -39,7 +39,8 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
     // Database connectors
-    runtimeOnly 'com.mysql:mysql-connector-j' // MySQL driver
+    // runtimeOnly 'com.mysql:mysql-connector-j' // MySQL driver
+	runtimeOnly 'org.postgresql:postgresql'
     // If you switch to PostgreSQL for Render:
     // runtimeOnly 'org.postgresql:postgresql'
 
