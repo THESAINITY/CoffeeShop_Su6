@@ -6,10 +6,34 @@ services:
     buildCommand: ./gradlew clean build -x test
     startCommand: java -jar build/libs/*.jar
     envVars:
+      # Database configuration
       - key: SPRING_DATASOURCE_URL
         fromDatabase:
           name: coffee-db
           property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        value: coffee_db_x9p8_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: OdaPjswHJTDRCzC1086NGLWFT0KE8vZ
+      - key: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+        value: org.postgresql.Driver
+        
+      # JPA/Hibernate configuration
+      - key: SPRING_JPA_DATABASE_PLATFORM
+        value: org.hibernate.dialect.PostgreSQLDialect
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+        value: org.hibernate.dialect.PostgreSQLDialect
+        
+      # Application configuration
+      - key: TOKEN
+        value: 8026365224:AAGlxDDRhJCo35C77nR-QkwjHdyVVkfWcps
+      - key: CHAT_ID
+        value: 1040591161
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+
 databases:
   - name: coffee-db
     plan: free
