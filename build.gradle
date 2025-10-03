@@ -26,32 +26,21 @@ repositories {
 }
 
 dependencies {
-    // Spring Boot Starters
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+       implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    // Dev tools
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-    // Database connectors
-    // runtimeOnly 'com.mysql:mysql-connector-j' // MySQL driver
-	runtimeOnly 'org.postgresql:postgresql'
-    // If you switch to PostgreSQL for Render:
-    // runtimeOnly 'org.postgresql:postgresql'
-
-    // Tomcat runtime (required for Spring Boot web apps)
+    runtimeOnly 'org.postgresql:postgresql'  // ✅ PostgreSQL only
     runtimeOnly 'org.springframework.boot:spring-boot-starter-tomcat'
 
-    // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // Telegram bot API
     implementation 'com.github.pengrad:java-telegram-bot-api:9.2.0'
 }
 
